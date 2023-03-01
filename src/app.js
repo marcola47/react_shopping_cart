@@ -1,5 +1,8 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { v4 } from 'uuid';
+
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faShoppingCart } from '@fortawesome/free-solid-svg-icons';
 import './css/app.css';
 
 import ShoppingList from './components/list';
@@ -51,11 +54,14 @@ export default function App()
   {
     // runs total price calc on page load 
     useEffect(() => {sumTotal(listItems);}, []); 
-    return <div className='total-price'>Total: <span className='highlight'>R${Number(totalPrice).toFixed(2)}</span></div>
+    if (listItems.length > 0)
+      return <div className='total-price'>Total: <span className='highlight'>R${Number(totalPrice).toFixed(2)}</span></div>
   }
 
   return (
     <div className="app">
+      <div className='app-title'><h1>SHOPPING CART</h1><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></div>
+      
       <div className='inputs'>
         <input id='input-name' ref={itemNameRef} type="text" placeholder='Name of the product'/>
         <input id='input-price' className='input-value' ref={itemPriceRef} type="number" placeholder='R$' step="any"/>

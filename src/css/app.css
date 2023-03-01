@@ -24,15 +24,28 @@ body {background-color: rgb(34, 39, 44);}
   color: white;
 }
 
+.app-title  
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+
+  margin-bottom: 32px;
+}
+
+.app-title .fa-cart-shopping
+{height: 1.48rem;}
+
 .inputs
 {
   display: grid;
   align-items: center;
   grid-template-columns: minmax(auto, 496px) 72px 72px;
   grid-template-rows: 1fr 1fr;
-  
   column-gap: 2px;
   row-gap: 4px;
+  
   max-width: 640px;
 }
 
@@ -131,6 +144,10 @@ body {background-color: rgb(34, 39, 44);}
 
 .li-remove
 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
   border-bottom-right-radius: 5px;
   border-top-right-radius: 5px;
 
@@ -138,10 +155,7 @@ body {background-color: rgb(34, 39, 44);}
 }
 
 .li-remove:hover
-{background-color: rgb(64, 79, 95);}
-
-.li-remove img
-{width: 100%;}
+{background-color: rgb(226, 53, 53);}
 
 @keyframes list-item-insertion 
 { 	

@@ -1,8 +1,10 @@
 import { useContext } from 'react';
 import { SumTotalContext, ListItemsContext } from '../app';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
+
 import ListItemParameter from './list-item-parameter';
-import trashCan from '../img/trash.png';
 
 export default function ListItem({ listItem })
 {
@@ -60,7 +62,7 @@ export default function ListItem({ listItem })
       <ListItemParameter type="name" value={listItem.name} onChange={handleNameChange}/>
       <ListItemParameter type="price" value={listItem.price} onChange={handlePriceChange}/>
       <ListItemParameter type="amount" value={listItem.amount} onChange={handleAmountChange}/>
-      <div className='li-remove' onClick={removeListItem}><img src={trashCan} alt="remove item"/></div>
+      <div className='li-remove' onClick={removeListItem}><FontAwesomeIcon icon={faTrashCan}></FontAwesomeIcon></div>
     </div>
   )
 }
