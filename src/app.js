@@ -25,12 +25,14 @@ export default function App()
   {
     // getting inputs from ref
     let name = itemNameRef.current.value;
+    if (name === '') name = "nameless product";
+
     let price = itemPriceRef.current.value;
-    let amount = itemAmountRef.current.value;
-
     if (price === '') price = 0;
-    if (amount === '') amount = 0;
 
+    let amount = itemAmountRef.current.value;
+    if (amount === '') amount = 0;
+    
     // creating new item and joining with previous items
     const newItem = {id: v4(), name: name, price: price, amount: amount};
     const newItems = [...listItems, newItem];

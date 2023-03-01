@@ -1,10 +1,7 @@
 import { useContext } from 'react';
 import { SumTotalContext, ListItemsContext } from '../app';
 
-import ItemAmount from './list-item-amount';
-import ItemPrice from './list-item-price';
-import ItemName from './list-item-name';
-
+import ListItemParameter from './list-item-parameter';
 import trashCan from '../img/trash.png';
 
 export default function ListItem({ listItem })
@@ -60,9 +57,9 @@ export default function ListItem({ listItem })
 
   return (
     <div className='li' id={listItem.id}>
-      <ItemName value={listItem.name} onChange={handleNameChange}/>
-      <ItemPrice value={listItem.price} onChange={handlePriceChange}/>
-      <ItemAmount value={listItem.amount} onChange={handleAmountChange}/>
+      <ListItemParameter type="name" value={listItem.name} onChange={handleNameChange}/>
+      <ListItemParameter type="price" value={listItem.price} onChange={handlePriceChange}/>
+      <ListItemParameter type="amount" value={listItem.amount} onChange={handleAmountChange}/>
       <div className='li-remove' onClick={removeListItem}><img src={trashCan} alt="remove item"/></div>
     </div>
   )
