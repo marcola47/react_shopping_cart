@@ -52,9 +52,12 @@ export default function ListItem({ listItem })
     setListItems(placeholderItems);
   }
   
-  function removeListItem()
+  function removeListItem() 
   {
-    setListItems((listItems) => listItems.filter((item) => item.id !== listItem.id));
+    const listItemElement = document.getElementById(listItem.id);
+  
+    listItemElement.classList.add('li-removing');
+    setTimeout(() => {setListItems((listItems) => listItems.filter((item) => item.id !== listItem.id))}, 400);
   }
 
   return (

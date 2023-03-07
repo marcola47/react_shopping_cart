@@ -8,8 +8,19 @@ input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {-webkit-appe
 
 body {background-color: rgb(34, 39, 44);}
 
+:root
+{
+  --blue-dark: #22272c;
+  --blue-light: #364250;
+
+  --green-dark: #16ec0f;
+  --green-light: #09ff00;
+
+  --red-light: #e23535;
+}
+
 .highlight
-{color: rgb(9, 255, 0);}
+{color: var(--green-dark);}
 
 .app
 {
@@ -57,7 +68,7 @@ body {background-color: rgb(34, 39, 44);}
 
   color: white;
   caret-color: white;
-  background-color: rgb(54, 66, 80);
+  background-color: var(--blue-light);
 }
 
 .inputs input::placeholder
@@ -83,7 +94,7 @@ body {background-color: rgb(34, 39, 44);}
   padding: 8px;
   border-radius: 5px;
 
-  background-color: rgb(22, 236, 15);
+  background-color: var(--green-dark);
 
   font-weight: 500;
   font-size: 20px;
@@ -91,7 +102,7 @@ body {background-color: rgb(34, 39, 44);}
 }
 
 #input-submit:hover
-{background-color: rgb(9, 255, 0);}
+{background-color: var(--green-light)}
 
 .total-price
 {margin: 4px 0px 16px 0px;}
@@ -107,7 +118,7 @@ body {background-color: rgb(34, 39, 44);}
   margin-bottom: 16px;
   border-radius: 5px;
 
-  background-color: rgb(34, 39, 44);
+  background-color: var(--blue-dark);
 
   animation: list-item-insertion 0.5s;
 }
@@ -122,7 +133,7 @@ body {background-color: rgb(34, 39, 44);}
   padding: 8px;
   border-radius: 2px;
 
-  background-color: rgb(54, 66, 80);
+  background-color: var(--blue-light);
 
   cursor: text;
 }
@@ -138,8 +149,8 @@ body {background-color: rgb(34, 39, 44);}
   height: 100%;
   width: 100%;
 
-  color: rgb(255, 255, 255);
-  background-color: rgb(54, 66, 80);
+  color: #fff;
+  background-color: var(--blue-light);
 }
 
 .li-remove
@@ -155,10 +166,19 @@ body {background-color: rgb(34, 39, 44);}
 }
 
 .li-remove:hover
-{background-color: rgb(226, 53, 53);}
+{background-color: var(--red-light);}
+
+.li-removing
+{animation: list-item-deletion 0.5s;}
 
 @keyframes list-item-insertion 
 { 	
   from {opacity: 0; transform: translateY(-30px);}
   to   {opacity: 1; transform: translateY(0px);}
+}
+
+@keyframes list-item-deletion 
+{
+  from {opacity: 1; transform: translateY(0px);}
+  to   {opacity: 0; transform: translateY(-30px);}
 }

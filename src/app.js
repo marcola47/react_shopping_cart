@@ -57,7 +57,7 @@ export default function App()
     if (listItems.length > 0)
       return <div className='total-price'>Total: <span className='highlight'>R${Number(totalPrice).toFixed(2)}</span></div>
   }
-
+  
   return (
     <div className="app">
       <div className='app-title'><h1>SHOPPING CART</h1><FontAwesomeIcon icon={faShoppingCart}></FontAwesomeIcon></div>
