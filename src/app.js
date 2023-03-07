@@ -36,15 +36,11 @@ export default function App()
     let amount = itemAmountRef.current.value;
     if (amount === '') amount = 0;
     
-    // creating new item and joining with previous items
     const newItem = {id: v4(), name: name, price: price, amount: amount};
     const newItems = [...listItems, newItem];
-    
-    // calculating total and setting new items
     sumTotal(newItems); 
     setListItems(newItems);
     
-    // clearing inputs
     itemNameRef.current.value = ""; 
     itemPriceRef.current.value = ""; 
     itemAmountRef.current.value = "";
@@ -52,8 +48,9 @@ export default function App()
 
   function PriceCounter()
   {
-    // runs total price calc on page load 
+    // runs total price calc on page load and whenever there is any change
     useEffect(() => {sumTotal(listItems);}, []); 
+    
     if (listItems.length > 0)
       return <div className='total-price'>Total: <span className='highlight'>R${Number(totalPrice).toFixed(2)}</span></div>
   }
